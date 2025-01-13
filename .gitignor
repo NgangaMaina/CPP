@@ -1,0 +1,13 @@
+# Ignore compiled binary files
+*.exe
+
+# Ignore object files
+*.o
+
+# Ignore debug files
+*.log
+
+# Ignore temporary files from your editor/OS
+*.tmp
+*.bak
+*.swp
