@@ -33,11 +33,11 @@ private:
     }
 };
 
-int main() {
+int main(){
     Solution sol;
     string s;
-    cout << "Enter a string: ";
+    cout << "Enter the string:";
     cin >> s;
-    cout << "Longest Palindromic Substring: " << sol.longestPalindrome(s) << endl;
+    cout << "The longest palindromic substring is:" << sol.longestPalindrome(s) << endl;
     return 0;
 }
