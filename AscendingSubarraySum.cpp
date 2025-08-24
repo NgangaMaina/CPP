@@ -2,15 +2,21 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int maxAscendingSum(vector<int>& nums) {
+    int maxAscendingSum(vector<int> &nums)
+    {
         int maxSum = nums[0], currentSum = nums[0];
 
-        for (size_t i = 1; i < nums.size(); i++) {
-            if (nums[i] > nums[i - 1]) {
+        for (size_t i = 1; i < nums.size(); i++)
+        {
+            if (nums[i] > nums[i - 1])
+            {
                 currentSum += nums[i];
-            } else {
+            }
+            else
+            {
                 maxSum = max(maxSum, currentSum);
                 currentSum = nums[i];
             }
@@ -19,7 +25,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     Solution solution;
     vector<int> nums = {10, 20, 30, 5, 10, 50};
     cout << "Max Ascending Subarray Sum: " << solution.maxAscendingSum(nums) << endl;

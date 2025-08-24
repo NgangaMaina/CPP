@@ -6,15 +6,18 @@ Median - Middle value in a sorted list of numbers.
 #include <vector>
 #include <climits>
 
-//Solve using the binary search approach.
+// Solve using the binary search approach.
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+    double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
+    {
         // Ensure nums1 is the smaller array
-        if (nums1.size() > nums2.size()) {
+        if (nums1.size() > nums2.size())
+        {
             return findMedianSortedArrays(nums2, nums1);
         }
 
@@ -22,8 +25,9 @@ public:
         int n = nums2.size();
         int low = 0, high = m;
 
-        while (low <= high) {
-            int i = low + (high - low) / 2;  // Partition index for nums1
+        while (low <= high)
+        {
+            int i = low + (high - low) / 2; // Partition index for nums1
             int j = (m + n + 1) / 2 - i;    // Partition index for nums2
 
             // Handling edge cases
@@ -34,18 +38,24 @@ public:
             int minRight2 = (j == n) ? INT_MAX : nums2[j];
 
             // If correct partition is found
-            if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {
-                if ((m + n) % 2 == 0) {  // Even length case
+            if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1)
+            {
+                if ((m + n) % 2 == 0)
+                { // Even length case
                     return (max(maxLeft1, maxLeft2) + min(minRight1, minRight2)) / 2.0;
-                } else {  // Odd length case
+                }
+                else
+                { // Odd length case
                     return max(maxLeft1, maxLeft2);
                 }
             }
-            else if (maxLeft1 > minRight2) {
-                high = i - 1;  // Move partition left
+            else if (maxLeft1 > minRight2)
+            {
+                high = i - 1; // Move partition left
             }
-            else {
-                low = i + 1;   // Move partition right
+            else
+            {
+                low = i + 1; // Move partition right
             }
         }
 
@@ -53,7 +63,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     Solution solution;
 
     vector<int> nums1 = {1, 3};
