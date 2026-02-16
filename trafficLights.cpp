@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <set>
 #include <vector>
 using namespace std;
@@ -11,7 +11,7 @@ int main() {
     //Store positions of traffic lights (Including boundaries)
     set<int> lights;
     lights.insert(0);
-
+    lights.insert(x);
 
     //Lengths of all passages
     multiset<int> passages;
@@ -20,7 +20,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         int p;
-        cin >>p;
+        cin >> p;
 
         //find the gap where this light will be added
         auto it = lights.upper_bound(p);
